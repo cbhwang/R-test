@@ -1,0 +1,4 @@
+unesco <- read.csv("unesco.csv")
+str(unesco)
+data <- summary(unesco$Births)
+print (data)
