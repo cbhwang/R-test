@@ -1,9 +1,18 @@
-png(filename="test.png")
-
 unesco <- read.csv("unesco.csv")
 str(unesco)
-data <- summary(unesco$Births)
-print (data)
-plot(density(unesco$GNP))
+print(summary(unesco$GNP))
 
+png(filename="Q1a1.png")
+par(mfrow=c(1,2))
+boxplot(unesco$GNP, main="Summary of GNP values", ylab="GNP")
+hist(unesco$GNP, main="Histogram of GNP values", xlab="GNP")
+
+png(filename="Q1a2.png")
+par(mfrow=c(2,3))
+plot(Births ~ GNP, data=unesco, main="Births vs GNP")
+plot(Deaths ~ GNP, data=unesco, main="Deaths vs GNP")
+plot(Infant.Deaths ~ GNP, data=unesco, main="Infant Deaths vs GNP")
+plot(Male.Life ~ GNP, data=unesco, main="Male Death vs GNP")
+plot(Female.Life ~ GNP, data=unesco, main="Female Deaths vs GNP")
+plot(Group ~ GNP, data=unesco, main="Group vs GNP")
 dev.off()
