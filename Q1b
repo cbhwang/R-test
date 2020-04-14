@@ -1,0 +1,10 @@
+unesco <- read.csv("unesco.csv")
+data=unesco$Infant.Deaths
+m<- mean(data)
+s<-sd(data)
+y=dnorm(data, mean=m, sd=s)
+
+png(filename="Q2a1.png")
+par(mfrow=c(1,2))
+hist(data, freq=T)
+plot(data, y)
