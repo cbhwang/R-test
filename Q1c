@@ -1,10 +1,9 @@
+
 unesco <- read.csv("unesco.csv")
 x <- unesco$GNP
 y <- unesco$Infant.Deaths
-xx=seq(0,50,5)
+print (cor(x, y))
 
 png(filename="Q1c.png")
-#par(mfrow=c(1,2))
-plot(x,y, main="Infant Deaths vs GNP")
-fit <- lm(y ~ poly(x,4,raw=TRUE))
-lines(x, predict(fit, data.frame(x=xx)))
+plot(x,y, main="Infant Deaths vs GNP", xlab="GNP", ylab="Infant Deaths")
+abline(lm(y~x))
