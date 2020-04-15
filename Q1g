@@ -1,0 +1,8 @@
+unesco <- read.csv("unesco.csv")
+g2 <- unesco[unesco$Group=="2",]
+
+png(filename="Q1g.png")
+plot(g2$GNP, g2$Births-g2$Deaths, xlab="GNP of Group 2", ylab="Net Grouth (Births-Deaths) of Group 2")
+abline(lm(g2$Births-g2$Deaths ~ g2$GNP))
+
+print(cor(g2$GNP, g2$Births-g2$Deaths))
