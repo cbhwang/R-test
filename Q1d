@@ -1,1 +1,17 @@
 
+unesco <- read.csv("unesco.csv")
+x <- unesco$Female.Life
+y <- unesco$Births
+
+png(filename="Q1d.png")
+par(mfrow=c(1,2))
+plot(x,y)
+
+model <- lm(y ~ poly(x, 1))
+print (summary(model))
+print (confint(model, level=0.95))
+
+predicted.intervals <- predict(model, data.frame(x=x), interval='confidence', level=0.99)
+lines(x, predicted.intervals[,1])
+
+plot (fitted(model), residuals(model))
