@@ -1,0 +1,15 @@
+
+unesco <- read.csv("unesco.csv")
+x <- unesco$Male.Life
+y <- unesco$Group
+a <- rle(sort(y))
+runid <- rep(seq_along(a$lengths),a$lengths)
+m <- tapply(x,runid,mean)
+s <- tapply(x,runid,sd)
+
+print(data.frame(group=a$values, number=a$lengths, mean=m, std=s))
+
+png(filename="Qie.png")
+par(mfrow=c(1,2))
+plot(y,x,ylab="Male Life", xlab="Group")
+boxplot(x~y)
