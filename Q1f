@@ -1,13 +1,10 @@
+
 library(lattice)
 
 unesco <- read.csv("unesco.csv")
-netgrowth <- unesco$Births-unesco$Deaths
-gnp <- unesco$GNP
-group <- unesco$Group
+attach(unesco)
+
+unesco$gn <- factor(unesco$Group, labels=c("Group 1","Group 2","Group 3","Group 4","Group 5","Group 6"))
 
 png(filename="Q1f.png")
-#par(mfrow=c(2,3))
-#xyplot(Births, GNP, groups=Group, data=unesco)
-#xyplot(Births ~ GNP, data=unesco)
-#plot(netgrowth, group)
-#plot(gnp, group)
+plot(xyplot(Births-Deaths ~ GNP | unesco$gn, main="scatter plot by Group", ylab="Net Growth = Births - Deaths", xlab="GNP"))
