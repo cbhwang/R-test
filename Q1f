@@ -1,0 +1,13 @@
+library(lattice)
+
+unesco <- read.csv("unesco.csv")
+netgrowth <- unesco$Births-unesco$Deaths
+gnp <- unesco$GNP
+group <- unesco$Group
+
+png(filename="Q1f.png")
+#par(mfrow=c(2,3))
+#xyplot(Births, GNP, groups=Group, data=unesco)
+#xyplot(Births ~ GNP, data=unesco)
+#plot(netgrowth, group)
+#plot(gnp, group)
