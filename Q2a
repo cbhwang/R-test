@@ -2,7 +2,7 @@
 library(DescTools)
 
 t <- c("Placebo only", "Nicotene patch", "Zyban", "Zyban & Nicotene patch")
-m <- c("Wald", "Agresti-Coull", "Jeffreys")
+m <- c("wald", "agresti-coull", "jeffreys")
 x <- c(30,52,85,95)
 n <- c(160,244,244,245)
 w <- matrix(nrow=4, ncol=3)
