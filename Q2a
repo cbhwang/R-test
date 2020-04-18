@@ -8,19 +8,19 @@ n <- c(160,244,244,245)
 w <- matrix(nrow=4, ncol=3)
 a <- matrix(nrow=4, ncol=3)
 j <- matrix(nrow=4, ncol=3)
-f <- c(5,6,7)
-lx <- c(1,2,3,4)
+#f <- c(5,6,7)
+#lx <- c(1,2,3,4)
 
 for (i in 1:4){
-#f <- binomci(x=x[i],n=n[i],method=m[1])
+f <- binomci(x=x[i],n=n[i],method=m[1])
 w[i,1]=f[1]-i
 w[i,2]=f[2]+i
 w[i,3]=f[3]
-#f <- binomci(x=x[i],n=n[i],method=m[2])
+f <- binomci(x=x[i],n=n[i],method=m[2])
 a[i,1]=f[1]
 a[i,2]=f[2]
 a[i,3]=f[3]
-#f <- binomci(x=x[i],n=n[i],method=m[3])
+f <- binomci(x=x[i],n=n[i],method=m[3])
 j[i,1]=f[1]
 j[i,2]=f[2]
 j[i,3]=f[3]
