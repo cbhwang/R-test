@@ -31,10 +31,19 @@ xy <- data.frame(teatment=t, x=x, n=n, W.lci=w[,2], W.uci=w[,3], AC.lci=a[,2], A
 print(xy)
 
 png(filename="Q2a.png")
-#par(mfrow=c(1,3))
-plot(lx,w[,2],pch=1,xlab="Treatment",ylab="Subjects not smoking",main=mt[1],xaxt='n')
+par(mfrow=c(3,1))
+x2=append(lx,lx)
+y2=append(w[,2],w[,3])
+plot(x2,y2,pch=1,xlab="Treatment",ylab="Confidence Intervals",main=mt[1],xaxt='n')
 axis(1, labels=t , at=c(1,2,3,4))
-#plot(x=lx,y=w[,3],pch=1)
+x2=append(lx,lx)
+y2=append(a[,2],a[,3])
+plot(x2,y2,pch=1,xlab="Treatment",ylab="Confidence Intervals",main=mt[2],xaxt='n')
+axis(1, labels=t , at=c(1,2,3,4))
+x2=append(lx,lx)
+y2=append(j[,2],j[,3])
+plot(x2,y2,pch=1,xlab="Treatment",ylab="Confidence Intervals",main=mt[3],xaxt='n')
+axis(1, labels=t , at=c(1,2,3,4))
 dev.off()
 
 
