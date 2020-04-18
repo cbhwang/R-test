@@ -1,15 +1,23 @@
 
-m <- c("Placebo only", "Nicotene patch", "Zyban", "Zyban & Nicotene patch")
+t <- c("Placebo only", "Nicotene patch", "Zyban", "Zyban & Nicotene patch")
+m <- c("Wald", "Agresti-Coull", "Jeffreys")
 x <- c(30,52,85,95)
 n <- c(160,244,244,245)
-wl <- c(1,2,3,4)
-wu <- c(1,2,3,4)
+w <- matrix(nrow=4, ncol=2)
+a <- matrix(nrow=4, ncol=2)
+j <- matrix(nrow=4, ncol=2)
+#f <- c(5,6,7)
 
-for (i=1;i=4;i++){
+for (i in 1:4){
 #f=binom.test(x[1],n[1])
-f <- binomci(x=x[1],n=n[1],method=m[1])
-wl[1]=f[2]
-wu[1]=f[3]
+#f <- binomci(x=x[i],n=n[i],method=m[j])
+w[i,1]=f[2]
+w[i,2]=f[3]
+a[i,1]=f[2]
+a[i,2]=f[3]
+j[i,1]=f[2]
+j[i,2]=f[3]
+}
 
-xy <- data.frame(teatment=m, x=x, n=n, wald.lci=wl, wald.uci=wu)
+xy <- data.frame(teatment=t, x=x, n=n, W.lci=w[,1], W.uci=w[,2], AC.lci=a[,1], AC.uci=a[,2], J.lci=j[,1], J.uci=j[,2])
 print(xy)
