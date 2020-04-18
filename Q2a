@@ -3,13 +3,14 @@ library(DescTools)
 
 t <- c("Placebo only", "Nicotene patch", "Zyban", "Zyban & Nicotene patch")
 m <- c("wald", "agresti-coull", "jeffreys")
+mt <- c("Calculated by Wald method", "Calculated by Agresti-Coull method", "Calculated by Jeffreys method")
+
 x <- c(30,52,85,95)
 n <- c(160,244,244,245)
 w <- matrix(nrow=4, ncol=3)
 a <- matrix(nrow=4, ncol=3)
 j <- matrix(nrow=4, ncol=3)
-#f <- c(5,6,7)
-#lx <- c(1,2,3,4)
+lx <- c(1,2,3,4)
 
 for (i in 1:4) {
 f <- BinomCI(x=x[i],n=n[i],method=m[1])
@@ -29,9 +30,10 @@ j[i,3]=f[3]
 xy <- data.frame(teatment=t, x=x, n=n, W.lci=w[,2], W.uci=w[,3], AC.lci=a[,2], AC.uci=a[,3], J.lci=j[,2], J.uci=j[,3])
 print(xy)
 
-
 png(filename="Q2a.png")
-par(mfrow=c(1,3))
-plot(x=lx,y=w[,2],pch=1)
+#par(mfrow=c(1,3))
+plot(lx,w[,2],pch=1,xlab="Treatment",ylab="Subjects not smoking",main=mt[1])
 #par(new=false)
-plot(x=lx,y=w[,3],pch=1)
+#plot(x=lx,y=w[,3],pch=1)
+dev.off()
+
