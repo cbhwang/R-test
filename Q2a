@@ -1,0 +1,15 @@
+t <- c("Placebo only", "Nicotene patch", "Zyban", "Zyban & Nicotene patch")
+x <- c(30,52,85,95)
+n <- c(160,244,244,245)
+n[5]=98
+print(n)
+
+p= binom.test(30,160)$conf.int
+f=binom.test(x[1],n[1])$conf.int
+print(binom.test(30,160))
+print(p)
+print(f)
+print(f[1])
+
+xy <- data.frame(teatment=t, x=x, n=n)
+print(xy)
