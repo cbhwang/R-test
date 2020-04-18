@@ -32,8 +32,9 @@ print(xy)
 
 png(filename="Q2a.png")
 #par(mfrow=c(1,3))
-plot(lx,w[,2],pch=1,xlab="Treatment",ylab="Subjects not smoking",main=mt[1])
-#par(new=false)
+plot(lx,w[,2],pch=1,xlab="Treatment",ylab="Subjects not smoking",main=mt[1],xaxt='n')
+axis(1, labels=t , at=c(1,2,3,4))
 #plot(x=lx,y=w[,3],pch=1)
 dev.off()
+
 
