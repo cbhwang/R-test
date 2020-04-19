@@ -6,4 +6,4 @@ print (cor(x, y))
 
 png(filename="Q1c.png")
 plot(x,y, main="Infant Deaths vs GNP", xlab="GNP", ylab="Infant Deaths")
-abline(lm(y~x))
+abline(lm(y~x), col=2)
