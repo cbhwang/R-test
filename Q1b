@@ -1,6 +1,20 @@
 
 unesco <- read.csv("unesco.csv")
 data=unesco$Infant.Deaths
+dev.new()
+par(mfrow=c(1,2))
+hist(data,freq=F,main="density vs normal distribution",xlab="Infant Death")
+lines(density(data),col="blue")#density
+x<-c(round(min(data)):round(max(data)))
+lines(x,dnorm(x,mean(data),sd(data)),col="red")#normal distribution
+par(new=F)
+qqnorm(data,main="qq plot")
+qqline(data)
+
+#################
+
+unesco <- read.csv("unesco.csv")
+data=unesco$Infant.Deaths
 m<- mean(data)
 s<- sqrt(var(data))
 d=dnorm(data, mean=m, sd=s)
