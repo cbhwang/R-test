@@ -9,7 +9,7 @@ x<-c(round(min(data)):round(max(data)))
 lines(x,dnorm(x,mean(data),sd(data)),col="red")#normal distribution
 par(new=F)
 qqnorm(data,main="qq plot")
-qqline(data)
+qqline(data, col=2)
 
 #################
 
