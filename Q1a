@@ -2,10 +2,12 @@ unesco <- read.csv("unesco.csv")
 str(unesco)
 print(summary(unesco$GNP))
 
-png(filename="Q1a1.png")
+#png(filename="Q1a1.png")
 par(mfrow=c(1,2))
 boxplot(unesco$GNP, main="Summary of GNP values", ylab="GNP")
 hist(unesco$GNP, main="Histogram of GNP values", xlab="GNP")
+
+#####
 
 png(filename="Q1a2.png")
 par(mfrow=c(2,3))
