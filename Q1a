@@ -4,7 +4,7 @@ print(summary(unesco$GNP))
 
 #png(filename="Q1a1.png")
 par(mfrow=c(1,2))
-boxplot(unesco$GNP, main="Summary of GNP values", ylab="GNP")
+boxplot(unesco$GNP, main="Boxplot of GNP values", ylab="GNP")
 hist(unesco$GNP, main="Histogram of GNP values", xlab="GNP")
 
 #####
