@@ -15,5 +15,7 @@ print (summary(model))
 predicted.intervals <- predict(model, data.frame(x=x), interval='confidence', level=0.99)
 lines(x, predicted.intervals[,1], col=2)
 
-plot (fitted(model), residuals(model))
+#plot (fitted(model), residuals(model))
+qqnorm(residuals(model),main="normal qq plot",ylab="Standarized Residuals")
+qqline(residuals(model), col=2)
 
