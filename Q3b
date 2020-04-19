@@ -1,0 +1,4 @@
+dev.off()
+observations <- matrix(rnorm(25000, mean=5, sd=3), 1000, 5)
+means <- rowMeans(observations)
+hist(observations)
